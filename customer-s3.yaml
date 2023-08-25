@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Parameters:
+  Prefix:
+    Type: String
+    
+
+Resources:
+  Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub "${Prefix}-cf-pipeline-bucket-s3"
+      AccessControl: Private
+
+
+Outputs:
+  BucketName:
+    Value: !Ref Bucket
